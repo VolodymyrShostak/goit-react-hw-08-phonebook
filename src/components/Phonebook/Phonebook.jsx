@@ -13,7 +13,7 @@ export default function Phonebook () {
 
   useEffect(() => {
     dispatch(fetchContacts());
-  }, []);
+  }, [dispatch]);
  const onChangeFilter = e => {
    setFilter(e.target.value);
  };
