@@ -1,15 +1,4 @@
 
-
-
-// export const App = () => {
-//   return (
-//     <div>
-//       <AppBar />
-//       <Phonebook />
-//     </div>
-//   );
-// };
-
 import { useEffect, lazy } from 'react';
 import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
@@ -22,7 +11,7 @@ import { useAuth } from 'hooks';
 const HomePage = lazy(() => import('../pages/Home'));
 const RegisterPage = lazy(() => import('../pages/Register'));
 const LoginPage = lazy(() => import('../pages/Login'));
-const PhonebookPage = lazy(() => import('../pages/Phonebook'));
+const PhonebookPage = lazy(() => import('../pages/Contacts'));
 
 export const App = () => {
   const dispatch = useDispatch();

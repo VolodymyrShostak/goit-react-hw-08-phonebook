@@ -1,4 +1,4 @@
-import { contactsReducer } from './personDataSlice';
+import { configureStore} from '@reduxjs/toolkit';
 import {
   persistStore,
   persistReducer,
@@ -10,27 +10,30 @@ import {
   REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import { filterReducer } from './filterSlise';
+import { phonebook } from './contacts/slice';
+import { authReducer } from './auth/slice';
 
-const phonebookPersistConfig = {
-  key: 'phonebook',
+
+
+// Persisting token field from auth slice to localstorage
+const authPersistConfig = {
+  key: 'auth',
   storage,
-  whitelist: ['contacts'],
+  whitelist: ['token'],
 };
-const rootReducer = combineReducers({
-  contacts: contactsReducer,
-  filter: filterReducer,
-});
-const persistedReduser = persistReducer(phonebookPersistConfig, rootReducer);
-const store = configureStore({
-  reducer: persistedReduser,
-  middleware: getDefaultMiddleware =>
+
+export const store = configureStore({
+  reducer: {
+    auth: persistReducer(authPersistConfig, authReducer),
+    contacts: phonebook,
+  },
+ middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }),
+ 
 });
 
 export const persistor = persistStore(store);
