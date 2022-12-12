@@ -2,9 +2,10 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Title, Input } from './Filter.styled.js';
 import { setFilter } from 'redux/contacts/operations';
+import { selectFilter } from '../../redux/contacts/selectors';
 
 const Filter = () => {
-  const filter = useSelector(({ phonebook: { filter } }) => filter);
+  const filter = useSelector(selectFilter);
   const dispatch = useDispatch();
 
   return (

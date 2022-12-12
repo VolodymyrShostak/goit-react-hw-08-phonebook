@@ -4,12 +4,16 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { Button, Contact, ContactList } from './ContactList.styled.js';
 import { deleteContact } from '../../redux/contacts/operations';
+import {
+  selectAllContacts,
+  selectFilter,
+} from '../../redux/contacts/selectors';
 
 const ContactsList = () => {
   const dispatch = useDispatch();
-
-  const contacts = useSelector(({ phonebook: { contacts } }) => contacts.items);
-  const filter = useSelector(({ phonebook: { filter } }) => filter);
+  const contacts = useSelector(selectAllContacts);
+  const filter = useSelector(selectFilter);
+  console.log(filter)
 
   const normalizedFilter = filter.toLowerCase();
   const visibleContacts = contacts.filter(contact =>

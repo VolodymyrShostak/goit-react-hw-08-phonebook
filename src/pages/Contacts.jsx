@@ -9,15 +9,18 @@ import {
   deleteContact,
   fetchContacts,
 } from 'redux/contacts/operations';
+import { selectAllContacts } from '../redux/contacts/selectors'
 
 export default function Phonebook() {
-  const contacts = useSelector(({ phonebook: { contacts } }) => contacts.items);
+  const contacts = useSelector(selectAllContacts);
+  console.log(contacts);
   const [filter, setFilter] = useState('');
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
+
   const onChangeFilter = e => {
     setFilter(e.target.value);
   };
