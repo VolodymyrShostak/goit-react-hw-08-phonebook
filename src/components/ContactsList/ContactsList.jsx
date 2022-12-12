@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { Button, Contact, ContactList } from './ContactList.styled.js';
-import { deleteContact } from '../../redux/operation';
+import { deleteContact } from '../../redux/contacts/operations';
 
 const ContactsList = () => {
   const dispatch = useDispatch();
- 
+
   const contacts = useSelector(({ phonebook: { contacts } }) => contacts.items);
   const filter = useSelector(({ phonebook: { filter } }) => filter);
 

@@ -1,5 +1,10 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { fetchContacts, addContact, deleteContact, setFilter } from './operation';
+import {
+  fetchContacts,
+  addContact,
+  deleteContact,
+  setFilter,
+} from './operations';
 
 const initialState = {
   contacts: {
@@ -10,11 +15,10 @@ const initialState = {
   filter: '',
 };
 
-export const phonebook= createReducer (initialState, {
-
+export const phonebook = createReducer(initialState, {
   [fetchContacts.pending]: state => {
     state.contacts.isLoading = true;
-     state.contacts.error = "";
+    state.contacts.error = '';
   },
   [fetchContacts.fulfilled]: (state, action) => {
     state.contacts.isLoading = false;
