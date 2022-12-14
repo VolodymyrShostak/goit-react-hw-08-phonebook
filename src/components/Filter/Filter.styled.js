@@ -5,5 +5,7 @@ margin-bottom: 10px;
 margin-top: 0;
 `
 export const Input = styled.input`
-width: 50%;
-`
+  width: 50%;
+  height: 30px;
+  border-radius: 10px;
+`;

@@ -6,7 +6,9 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 1000px;
-  margin:  auto ;
+  margin: auto;
+  background-color: #add8e6;
+  margin-top: 30px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 `;
 

@@ -1,13 +1,14 @@
 const styles = {
   container: {
-    maxWidth: '90%',
-    margin:'auto',
+    margin: 'auto',
     minHeight: 'calc(100vh - 50px)',
     display: 'flex',
+    backgroundColor:'#ADD8E6',
     alignItems: 'center',
     justifyContent: 'center',
   },
   title: {
+    maxWidth: '90%',
     fontWeight: 500,
     fontSize: 48,
     textAlign: 'center',
