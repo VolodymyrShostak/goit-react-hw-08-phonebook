@@ -8,7 +8,22 @@ export const Form = styled.form`
 
 export const Label = styled.label`
   display: flex;
+  
   flex-direction: column;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
     `;
-export const Button = styled.button``;
+export const Input = styled.input`
+  height: 30px;
+  border-radius:10px;
+`;
+
+export const Button = styled.button`
+margin-top: 20px;
+height: 35px;
+width:100px;
+font-size: 20px;
+border:none;
+border-radius: 10px;
+background-color: orange;
+color: white;
+cursor: pointer;`

@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Form from './../Form/Form';
-import Filter from '../Filter/Filter';
-import ContactsList from '../ContactsList/ContactsList';
+import { Form } from './../Form/Form';
+import { Filter } from '../Filter/Filter';
+import { ContactsList } from '../ContactsList/ContactsList';
 import { Wrapper, Title, Subtitle } from './Phonebook.styled.js';
 import {
   addContact,
@@ -11,7 +11,7 @@ import {
 } from 'redux/contacts/operations';
 import { selectAllContacts } from '../../redux/contacts/selectors';
 
-export default function Phonebook() {
+export  function Phonebook() {
   const contacts = useSelector(selectAllContacts);
   const [filter, setFilter] = useState('');
   const dispatch = useDispatch();

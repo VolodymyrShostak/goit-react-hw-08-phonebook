@@ -4,7 +4,7 @@ import { Title, Input } from './Filter.styled.js';
 import { setFilter } from 'redux/contacts/operations';
 import { selectFilter } from '../../redux/contacts/selectors';
 
-const Filter = () => {
+export const Filter = () => {
   const filter = useSelector(selectFilter);
   const dispatch = useDispatch();
 
@@ -25,4 +25,4 @@ const Filter = () => {
     </>
   );
 };
-export default Filter;
+

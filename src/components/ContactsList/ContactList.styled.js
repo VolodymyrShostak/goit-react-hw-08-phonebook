@@ -18,3 +18,6 @@ margin-bottom: 10px;
 export const ContactList = styled.ul`
 padding: 0;
 ` 
+export const ContactNumber = styled.span`
+
+`

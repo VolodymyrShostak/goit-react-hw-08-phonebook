@@ -1,4 +1,3 @@
-
 import { useEffect, lazy } from 'react';
 import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
@@ -18,7 +17,6 @@ export const App = () => {
   const { isRefreshing } = useAuth();
 
   useEffect(() => {
-    
     dispatch(refreshUser());
   }, [dispatch]);
 
@@ -31,7 +29,10 @@ export const App = () => {
         <Route
           path="/register"
           element={
-            <RestrictedRoute redirectTo="/contacts" component={<RegisterPage />} />
+            <RestrictedRoute
+              redirectTo="/contacts"
+              component={<RegisterPage />}
+            />
           }
         />
         <Route

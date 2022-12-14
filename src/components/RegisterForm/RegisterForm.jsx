@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
-import {Form, Label, Button} from './RegisterForm.styled';
+import {Form, Label,Input, Button} from './RegisterForm.styled';
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -8,6 +8,14 @@ export const RegisterForm = () => {
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.currentTarget;
+   
+     if (
+       form.elements.name.value.trim() === '' ||
+       form.elements.email.value.trim() === '' ||
+       form.elements.password.value.trim() === ''
+     ) {
+       return alert(`Input all fields is required`);
+     }
     dispatch(
       register({
         name: form.elements.name.value,
@@ -22,15 +30,15 @@ export const RegisterForm = () => {
     <Form  onSubmit={handleSubmit} autoComplete="off">
       <Label >
         Username
-        <input type="text" name="name" />
+        <Input type="text" name="name" />
       </Label>
       <Label >
         Email
-        <input type="email" name="email" />
+        <Input type="email" name="email" />
       </Label>
       <Label >
         Password
-        <input type="password" name="password" />
+        <Input type="password" name="password" />
       </Label>
       <Button type="submit">Register</Button>
     </Form>

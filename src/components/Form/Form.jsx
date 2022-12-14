@@ -6,7 +6,7 @@ import {
   selectAllContacts,
 } from '../../redux/contacts/selectors';
 
-export default function Form() {
+export  function Form() {
   const dispatch = useDispatch();
   const contacts = useSelector(selectAllContacts);
 
