@@ -14,7 +14,6 @@ export const Wrapper = styled.div`
 export const Form = styled.form`
   width: 320px;
   margin: auto;
-  /* margin-top: 80px; */
   justify-content: center;
 `;
 
